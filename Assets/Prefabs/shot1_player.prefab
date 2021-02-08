@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1457992409925922418}
   - component: {fileID: 6665958028870373222}
   - component: {fileID: 2956207163111393941}
+  - component: {fileID: 7234288428753123785}
   m_Layer: 0
   m_Name: shot1_player
   m_TagString: shot
@@ -122,3 +123,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ae3b7d556f7949b8d1711134645ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vel: 20
+--- !u!114 &7234288428753123785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460961892721516570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2c69fbf7ca34249857c71958884b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageNPC: 1
+  damagePlayer: 0

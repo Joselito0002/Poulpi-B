@@ -9,32 +9,34 @@ using UnityEngine;
     ///         Script utilitzat per controlar el player 
     /// AUTOR:  Mathias Miranda
     /// DATA:   18/01/21
-    /// VERSIÓ: 0.1
+    /// VERSIÓ: 0.3
     /// CONTROL DE VERSIONS
     ///         0.1: Moviment de la nau amb tecles i fisiques
+    ///         0.2: Crear trets de la nau
+    ///         0.3: Crear 3 trets de canons
     /// ----------------------------------------------------------------------------------
     /// </summary>
     
     
 public class ScrPlayer : MonoBehaviour
 {
+  
     [SerializeField] 
     float velocitat = 10f;
+    Vector2 movi = new Vector2();   //per calcular moviment
+    Rigidbody2D rb;                 //per accedir al component ribidbody2D
+    AudioSource so;
+
 
     //**********  Gestió Shot  ********
-    [SerializeField]
-    GameObject missil; // element a instancar. Arroseguem pregab!
-    [SerializeField] 
-    Transform cano; // d'on surt la bala 
+    [SerializeField] GameObject missil; // element a instancar. Arroseguem pregab!
+    [SerializeField] Transform [] canons; // d'on surt la bala 
 
 
     //**********  Cooldown  *********
-    float cadencia = 0.3f; // dispara cada 5 decimes
+    [SerializeField] float cadencia = 0.5f; // dispara cada 5 decimes
     float crono = 0f; // temps de cadencia
-
-    Vector2 movi = new Vector2();   //per calcular moviment
-    Rigidbody2D rb;                 //per accedir al component ribidbody2D
-
+    float cronoPowerUp = 0f; 
     
 
     // Start is called before the first frame update
@@ -49,10 +51,21 @@ public class ScrPlayer : MonoBehaviour
         movi.x = ETCInput.GetAxis("Horizontal") * velocitat;
         movi.y = ETCInput.GetAxis("Vertical") * velocitat;
 
-        if (ETCInput.GetButtonDown("Shoot") && crono > cadencia) Dispara();
+        if (ETCInput.GetButton("Shoot") && crono > cadencia) Dispara();
         crono += Time.deltaTime;
 
         if (ETCInput.GetButtonUp("Shoot")) crono = cadencia; // Permet disparar ràpid amb múltiples clicks
+
+        if (Input.GetKeyDown(KeyCode.T)) // Proto del tripe shoot
+        {
+            SetTripleShoot(true);
+            cronoPowerUp = 5f;
+        }
+
+        if (cronoPowerUp > 0) cronoPowerUp -= Time.deltaTime; //descuenta el tiempo desde que le das a T
+        else SetTripleShoot(false);  //Como no es más grande que 0, se desactiva
+
+        so = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -62,9 +75,21 @@ public class ScrPlayer : MonoBehaviour
 
     void Dispara()
     {
-        Instantiate(missil, cano.position, Quaternion.Euler(new Vector3(0, 0, 33)));
-        Instantiate(missil, cano.position, cano.rotation);
-        Instantiate(missil, cano.position, Quaternion.Euler(new Vector3(0, 0, -33)));
-        crono = 0;
+            foreach(Transform cano in canons)
+            if (cano.gameObject.activeSelf) Instantiate(missil, cano.position, cano.rotation);  // si les instancies estan visibles, dispararà, si no, no ho fa tampoc de manera predeterminada
+            crono = 0;
+
+        so.Play();
+    }
+
+    void SetTripleShoot(bool estat) //Fa activa les instancies, si no, no dispara 3
+    {
+        canons[0].gameObject.SetActive(estat);
+        canons[2].gameObject.SetActive(estat);
+    }
+
+    void Destruccio() //Indica com es destrueix
+    {
+        Destroy(gameObject);
     }
 }
