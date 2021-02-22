@@ -14,8 +14,7 @@ public class ScrControlGame : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X)) Debug.Break();    
+    {   
         if (Input.GetKeyDown(KeyCode.M)) AudioListener.pause = !AudioListener.pause; //pasar de falso a true o true a falso
         
     }

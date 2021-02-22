@@ -243,6 +243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitality: 10
+  tocat: {fileID: 8300000, guid: dc5dde4dc74a67c45a466d34461150b8, type: 3}
+  enfonsat: {fileID: 8300000, guid: fc77ddf742f76d546b28d0712d82d296, type: 3}
 --- !u!82 &949126832953880356
 AudioSource:
   m_ObjectHideFlags: 0
