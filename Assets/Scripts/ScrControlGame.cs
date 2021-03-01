@@ -8,7 +8,7 @@ public class ScrControlGame : MonoBehaviour
     void Start()
     {
 #if (UNITY_EDITOR)
-        AudioListener.pause = true;  //solo se ejecuta cuando estamos en unity editor
+        //AudioListener.pause = true;  //solo se ejecuta cuando estamos en unity editor
 #endif
     }
 
@@ -18,4 +18,10 @@ public class ScrControlGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M)) AudioListener.pause = !AudioListener.pause; //pasar de falso a true o true a falso
         
     }
+    static public bool EsVisibleDesde(Renderer renderer, Camera camera)
+    {
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
+        return GeometryUtility.TestPlanesAABB(planes, renderer.bounds);
+    }
 }
+

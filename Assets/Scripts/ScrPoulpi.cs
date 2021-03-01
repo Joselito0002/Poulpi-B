@@ -60,7 +60,8 @@ public class ScrPoulpi : MonoBehaviour
 
     private void Update()
     {
-        if (r.isVisible)
+        //if (r.isVisible)
+        if(ScrControlGame.EsVisibleDesde (r,Camera.main))
         {
             crono -= Time.deltaTime;
             if (crono <= 0) Dispara();
