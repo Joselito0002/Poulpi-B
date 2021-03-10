@@ -1554,6 +1554,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089573203}
   m_CullTransparentMesh: 0
+--- !u!1 &1218441782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3570285516221036007, guid: 0d856b554ff85274187a6d6734f51bec,
+    type: 3}
+  m_PrefabInstance: {fileID: 7009665877056151867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1287997719
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,15 +2607,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1882935374}
     m_Modifications:
+    - target: {fileID: 454509057983239468, guid: 96edf904c10649345b0f8cd1ecf67bda,
+        type: 3}
+      propertyPath: apuntar
+      value: 
+      objectReference: {fileID: 1218441782}
+    - target: {fileID: 1316404414255099823, guid: 96edf904c10649345b0f8cd1ecf67bda,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564635006744195874, guid: 96edf904c10649345b0f8cd1ecf67bda,
+        type: 3}
+      propertyPath: filtreCapes.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5567288426322579829, guid: 96edf904c10649345b0f8cd1ecf67bda,
         type: 3}
       propertyPath: m_Name
       value: Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952601964347088867, guid: 96edf904c10649345b0f8cd1ecf67bda,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7592602066498906246, guid: 96edf904c10649345b0f8cd1ecf67bda,
         type: 3}
@@ -2665,11 +2681,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958389064675587042, guid: 96edf904c10649345b0f8cd1ecf67bda,
-        type: 3}
-      propertyPath: m_Name
-      value: Root
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96edf904c10649345b0f8cd1ecf67bda, type: 3}
@@ -2749,10 +2760,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1882935374}
     m_Modifications:
+    - target: {fileID: 54580018791423633, guid: 0d856b554ff85274187a6d6734f51bec,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874274368812796934, guid: 0d856b554ff85274187a6d6734f51bec,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3570285516221036007, guid: 0d856b554ff85274187a6d6734f51bec,
         type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570285516221036007, guid: 0d856b554ff85274187a6d6734f51bec,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545582577632387024, guid: 0d856b554ff85274187a6d6734f51bec,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4831115727851142781, guid: 0d856b554ff85274187a6d6734f51bec,
         type: 3}
