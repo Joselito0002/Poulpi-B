@@ -10,7 +10,7 @@ public class ScrNPCShot : MonoBehaviour
     float crono;
     [SerializeField] Renderer render;
     [SerializeField] bool rotar = false;  // determina si dispara amb angle
-    public bool atacant = true;  // determina si està atacant
+    public bool atacant = false;  // determina si està atacant
 
     void Start()
     {

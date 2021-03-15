@@ -151,7 +151,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -6963195877183015321, guid: 7c4d49e961a6c734d8e580f414088700,
+  m_Sprite: {fileID: 7801903984715115176, guid: 7c4d49e961a6c734d8e580f414088700,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   cadenciaMax: 3
   render: {fileID: 6025312528515810838}
   rotar: 0
-  atacant: 1
+  atacant: 0
 --- !u!1 &5887566368153045980
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +593,10 @@ MonoBehaviour:
   explosio: {fileID: 4848161231495409008, guid: eaa8b34c5dff9b047a64c491461cf6b6,
     type: 3}
   r: {fileID: 6025312528515810838}
+  velocitat: 0
+  filtreCapes:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &1104394463413188792
 Animator:
   serializedVersion: 3
